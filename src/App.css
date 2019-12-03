@@ -36,6 +36,11 @@ nav ul {
   justify-content: space-around;
   align-items: center;
 
+
+}
+li.list-items{
+  border-right: 1px solid #09d3ac;
+  padding: 5px;
 }
 nav ul.nav-list a, nav ul.nav-list a:hover{
   color: white;

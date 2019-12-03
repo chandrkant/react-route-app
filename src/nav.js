@@ -5,17 +5,17 @@ function  Nav(){
   <nav>
       <ul className="nav-list">
           <Link to="/">
-              <li>
+              <li className="list-items">
                   Home
               </li>
           </Link>
           <Link to="/about">
-              <li>
+              <li className="list-items">
                   About
               </li>
           </Link>
           <Link to="/trips">
-              <li>
+              <li className="list-items">
                   Bus Trips
               </li>
           </Link>
