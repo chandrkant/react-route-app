@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 10vh;
+  color: white;
+}
+
+nav ul {
+  width: 40%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+nav ul.nav-list a, nav ul.nav-list a:hover{
+  color: white;
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
