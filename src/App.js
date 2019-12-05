@@ -1,6 +1,7 @@
 import React from 'react';
 import People from './People'
 import Trip from './trip-details'
+import Count from "./count";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import  Nav from './nav'
@@ -25,6 +26,7 @@ function Home() {
     return(
         <div>
             <h1>Home Page</h1>
+            <Count/>
         </div>
     )
 }
