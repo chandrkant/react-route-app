@@ -36,7 +36,7 @@ class SelectBox extends Component {
             <div>
                 <div className="select-box--box">
                     <div className="select-box--container">
-                        <div className="select-box--selected-item">
+                        <div className="select-box--selected-item" onClick={this.dropDown}>
                             { this.state.selectedItems.name }
                         </div>
 
