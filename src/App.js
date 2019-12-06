@@ -1,44 +1,28 @@
-import React from 'react';
-import People from './People'
-import Trip from './trip-details'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
 import './App.css';
-import  Nav from './nav'
+import SelectBox from "./features/index";
+
 function App() {
+    const [country,setCountry] = useState([])
+    const allCountries =  async () =>{
+        const data = await fetch('https://restcountries.eu/rest/v2/all')
+        const cData = await data.json();
+        await setCountry(cData)
+        console.log(country)
+    }
+    useEffect(() =>{
+        allCountries()
+    },[])
   return (
-      <Router>
-        <div className="App">
-          <Nav/>
-          <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/about"  component={About}/>
-              <Route path="/trips" exact component={People}/>
-              <Route path= "/trip/:id" component={Trip} />
-          </Switch>
-        </div>
-      </Router>
-  );
+     <div>
+         <h1>Custom select Box</h1>
+         <SelectBox
+             country={country}
+             name="country_name"
+             code="country_code"
+         />
+     </div>
+  )
 }
 
 export default App;
-function Home() {
-    return(
-        <div>
-            <h1>Home Page</h1>
-        </div>
-    )
-}
-function About() {
-    return(
-        <div>
-            <h1>About</h1>
-        </div>
-    )
-}
-// function Shop() {
-//     return(
-//         <div>
-//             <h1>Shop</h1>
-//         </div>
-//     )
-// }
