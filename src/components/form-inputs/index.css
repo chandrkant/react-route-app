@@ -1,0 +1,22 @@
+.__email-input{
+    background: url('/email.png') no-repeat 10px 8px;
+    background-size: 16px 16px;
+}
+.__password-input{
+    background: url('/lock-icon.png') no-repeat 10px 8px;
+    background-size: 16px 16px;
+}
+.form-input{
+    display: flex;
+    padding: 10px;
+}
+.__text-input{
+    border: 1px solid #bbb;
+    color: #515151;
+    outline: 0;
+    padding: 8px;
+    font-size: 1.1em;
+    min-width: 200px;
+    border-radius: 4px;
+    padding-left: 32px;
+}

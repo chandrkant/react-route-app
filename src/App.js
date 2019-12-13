@@ -1,28 +1,32 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
-import SelectBox from "./features/index";
-
-function App() {
-    const [country,setCountry] = useState([])
-    const allCountries =  async () =>{
-        const data = await fetch('https://restcountries.eu/rest/v2/all')
-        const cData = await data.json();
-        await setCountry(cData)
-        console.log(country)
+import React, {Component} from 'react'
+import EmailInput from "./components/form-inputs/email-input";
+import './App.css'
+import PasswordInput from "./components/form-inputs/password-input";
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+            email: '',
+            password: '',
+        }
+        this.handleChange = this.handleChange.bind(this)
     }
-    useEffect(() =>{
-        allCountries()
-    },[])
-  return (
-     <div>
-         <h1>Custom select Box</h1>
-         <SelectBox
-             country={country}
-             name="country_name"
-             code="country_code"
-         />
-     </div>
-  )
+    handleChange(event,attr){
+        const newState = {...this.state}
+        newState[attr] = event.target.value;
+        this.setState(newState);
+    }
+    render() {
+        return(
+            <div>
+                <div className="form-input">
+                    <EmailInput value={this.state.email} handleChange={this.handleChange} placeholder = "Email input field"/>
+                </div>
+                <div className="form-input">
+                    <PasswordInput value={this.state.password} placeholder="Password" handleChange={this.handleChange}/>
+                </div>
+            </div>
+        )
+    }
 }
-
-export default App;
+export default App
